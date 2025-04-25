@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import { Heart, Brain, Stethoscope, Bone, Eye, Flask } from "lucide-react";
+import { Heart, Brain, Stethoscope, Bone, Eye, Flask2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
@@ -9,11 +9,15 @@ interface SpecialtyCardProps {
   description: string;
   icon: React.ReactNode;
   className?: string;
+  animationDelay?: string;
 }
 
-const SpecialtyCard = ({ title, description, icon, className }: SpecialtyCardProps) => {
+const SpecialtyCard = ({ title, description, icon, className, animationDelay }: SpecialtyCardProps) => {
   return (
-    <Card className={cn("border-none shadow-lg hover:shadow-xl transition-shadow", className)}>
+    <Card 
+      className={cn("border-none shadow-lg hover:shadow-xl transition-shadow", className)}
+      style={animationDelay ? { animationDelay } : undefined}
+    >
       <CardContent className="p-6">
         <div className="bg-hospital-100 w-14 h-14 rounded-full flex items-center justify-center mb-4">
           <div className="text-hospital-400">{icon}</div>
@@ -55,7 +59,7 @@ const SpecialtiesSection = () => {
     {
       title: "Pathology",
       description: "Advanced laboratory services for accurate diagnosis and treatment.",
-      icon: <Flask className="h-6 w-6" />,
+      icon: <Flask2 className="h-6 w-6" />,
     },
   ];
 
@@ -78,7 +82,7 @@ const SpecialtiesSection = () => {
               description={specialty.description}
               icon={specialty.icon}
               className="animate-fade-in"
-              style={{ animationDelay: `${index * 100}ms` }}
+              animationDelay={`${index * 100}ms`}
             />
           ))}
         </div>
