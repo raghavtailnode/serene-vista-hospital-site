@@ -1,6 +1,5 @@
-
 import { motion } from "framer-motion";
-import { Heart, Brain, Stethoscope, Bone, Eye, Flask2 } from "lucide-react";
+import { Heart, Brain, Stethoscope, Bone, Eye, FlaskConical } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
@@ -59,7 +58,7 @@ const SpecialtiesSection = () => {
     {
       title: "Pathology",
       description: "Advanced laboratory services for accurate diagnosis and treatment.",
-      icon: <Flask2 className="h-6 w-6" />,
+      icon: <FlaskConical className="h-6 w-6" />,
     },
   ];
 
